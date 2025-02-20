@@ -1,1 +1,3 @@
-
+.country-sanctioned {
+  display: none !important; /* Скрываем серый флаг совсем */
+}
