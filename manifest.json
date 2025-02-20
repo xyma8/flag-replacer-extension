@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Flag Replacer and Link Editor",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Восстанавливает русский флаг и редактирует ссылки и текст на Chess.com.",
   "permissions": ["activeTab"],
   "content_scripts": [
     {
-      "matches": ["https://*.chess.com/*"],
+      "matches": ["https://*.chess.com/*", "https://*.c4355.com/*"],
       "js": ["content.js"],
-      "run_at": "document_end"
+      "run_at": "document_end",
+      "css": ["styles.css"]
     }
   ],
   "background": {
