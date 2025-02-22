@@ -144,7 +144,6 @@ async function replaceSanctionedFlags() {
  * Наблюдатель для отслеживания изменений в DOM и применения замен.
  */
 function observeDOMChanges() {
-  //if (pendingRequests.size > 0) return;
   const targetNode = document.body;
   const config = { childList: true, subtree: true };
 
@@ -154,19 +153,6 @@ function observeDOMChanges() {
 
   observer.observe(targetNode, config);
 }
-
-/*
-// **Ограничение частоты вызова `replaceSanctionedFlags()`**
-let observerTimeout = null;
-const observer = new MutationObserver(() => {
-  if (observerTimeout) clearTimeout(observerTimeout);
-  observerTimeout = setTimeout(() => {
-    replaceSanctionedFlags();
-  }, 1); // Ждём 500 мс перед повторным вызовом (чтобы не спамить)
-});
-
-observer.observe(document.body, { childList: true, subtree: true });
-*/
 
 // При загрузке страницы читаем context
 const currentUserCountryId = getCurrentUserCountry();
